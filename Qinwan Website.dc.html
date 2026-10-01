@@ -217,58 +217,18 @@ input,select,textarea,button{font-family:inherit}
       <div>
         <p style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:#D98A66;margin:0 0 20px">Book a free consultation</p>
         <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(40px,5vw,64px);line-height:1.02;margin:0 0 28px;text-wrap:balance">Thinking about the UAE?</h2>
-        <p style="font-size:18px;line-height:1.65;color:#D9D4CB;margin:0 0 40px;max-width:440px;text-wrap:pretty">A free 30-minute call to understand your business, your goals and what a successful entry could look like. Pick three slots that suit you — we'll confirm one by email.</p>
+        <p style="font-size:18px;line-height:1.65;color:#D9D4CB;margin:0 0 40px;max-width:440px;text-wrap:pretty">A free 30-minute call to understand your business, your goals and what a successful entry could look like.</p>
         <a href="mailto:kacibouabida@qinwan-marketing.com" style="color:#F6F3EE;border-bottom:1px solid #D98A66;padding-bottom:4px" style-hover="color:#D98A66">kacibouabida@qinwan-marketing.com</a>
       </div>
 
-      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-        <form onSubmit="{{ onSubmit }}" style="display:grid;gap:18px">
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px">
-            <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">Full name *<input name="name" value="{{ f.name }}" onChange="{{ onField }}" required style="background:transparent;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none" style-focus="border-bottom-color:#D98A66"></label>
-            <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">Work email *<input name="email" type="email" value="{{ f.email }}" onChange="{{ onField }}" required style="background:transparent;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none" style-focus="border-bottom-color:#D98A66"></label>
-            <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">Company *<input name="company" value="{{ f.company }}" onChange="{{ onField }}" required style="background:transparent;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none" style-focus="border-bottom-color:#D98A66"></label>
-            <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">Website<input name="website" value="{{ f.website }}" onChange="{{ onField }}" style="background:transparent;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none" style-focus="border-bottom-color:#D98A66"></label>
-          </div>
-          <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">Your business
-            <select name="sector" value="{{ f.sector }}" onChange="{{ onField }}" style="background:#141A22;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none">
-              <option value="E-commerce">E-commerce</option>
-              <option value="SaaS">SaaS</option>
-              <option value="Digital business">Digital business</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-          <label style="display:grid;gap:8px;font-size:13px;color:#C9C3B9">What would you like to achieve in the UAE?<textarea name="message" value="{{ f.message }}" onChange="{{ onField }}" rows="3" style="background:transparent;border:0;border-bottom:1px solid #4A515C;color:#F6F3EE;font-size:16px;padding:10px 0;outline:none;resize:vertical" style-focus="border-bottom-color:#D98A66"></textarea></label>
-
-          <div style="display:grid;gap:12px;margin-top:8px">
-            <span style="font-size:13px;color:#C9C3B9">Preferred slots (Dubai time, GST) *</span>
-            <sc-for list="{{ slots }}" as="s" hint-placeholder-count="3">
-              <div style="display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center">
-                <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:#D98A66">{{ s.n }}</span>
-                <input type="date" name="{{ s.dateKey }}" value="{{ s.date }}" min="{{ today }}" onChange="{{ onField }}" style="background:#1D2530;border:1px solid #343B46;color:#F6F3EE;font-size:15px;padding:12px;outline:none;color-scheme:dark">
-                <select name="{{ s.timeKey }}" value="{{ s.time }}" onChange="{{ onField }}" style="background:#1D2530;border:1px solid #343B46;color:#F6F3EE;font-size:15px;padding:12px;outline:none">
-                  <option value="09:00–10:00">09:00 – 10:00</option>
-                  <option value="10:00–11:00">10:00 – 11:00</option>
-                  <option value="11:00–12:00">11:00 – 12:00</option>
-                  <option value="14:00–15:00">14:00 – 15:00</option>
-                  <option value="15:00–16:00">15:00 – 16:00</option>
-                  <option value="16:00–17:00">16:00 – 17:00</option>
-                </select>
-              </div>
-            </sc-for>
-          </div>
-          <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size:14px;color:#E8A584">{{ error }}</span>
-          </sc-if>
-          <button type="submit" style="margin-top:12px;background:#B4613E;color:#FFFFFF;border:0;padding:18px 28px;font-size:15px;font-weight:500;border-radius:2px;cursor:pointer;justify-self:start" style-hover="background:#C9714B">Request my consultation</button>
-        </form>
-      </sc-if>
-      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-        <div style="border:1px solid #343B46;padding:40px;align-self:start">
-          <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;margin:0 0 16px">Thank you.</p>
-          <p style="line-height:1.65;color:#D9D4CB;margin:0 0 24px">Your email app has opened with your request. Send it and Kaci will confirm one of your slots by email.</p>
-          <button type="button" onClick="{{ reset }}" style="background:transparent;color:#F6F3EE;border:1px solid #4A515C;padding:12px 20px;font-size:14px;cursor:pointer" style-hover="border-color:#D98A66">Edit request</button>
+      <div style="border:1px solid #343B46;padding:clamp(32px,4vw,48px);align-self:start;display:grid;gap:24px">
+        <div style="display:grid;gap:12px;line-height:1.5;color:#D9D4CB">
+          <span>Free 30-minute consultation</span>
+          <span>Tell us about your business and your UAE goals</span>
+          <span>We reply by email to set a time</span>
         </div>
-      </sc-if>
+        <a href="mailto:kacibouabida@qinwan-marketing.com?subject=Consultation%20request" style="background:#B4613E;color:#FFFFFF;padding:18px 28px;font-size:15px;font-weight:500;border-radius:2px;justify-self:start" style-hover="background:#C9714B;color:#FFFFFF">Email us to book</a>
+      </div>
     </div>
   </section>
 
@@ -295,29 +255,8 @@ input,select,textarea,button{font-family:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
-  state = { f: { name: '', email: '', company: '', website: '', sector: 'E-commerce', message: '', d1: '', t1: '10:00–11:00', d2: '', t2: '14:00–15:00', d3: '', t3: '16:00–17:00' }, sent: false, error: '' };
-  onField = (e) => { const { name, value } = e.target; this.setState(s => ({ f: { ...s.f, [name]: value }, error: '' })); };
-  onSubmit = (e) => {
-    e.preventDefault();
-    const f = this.state.f;
-    if (!f.name || !f.email || !f.company) return this.setState({ error: 'Please fill in your name, email and company.' });
-    if (!f.d1) return this.setState({ error: 'Please choose at least one preferred slot.' });
-    const slots = [1, 2, 3].filter(i => f['d' + i]).map(i => `  ${i}. ${f['d' + i]} · ${f['t' + i]} GST`).join('\n');
-    const body = `Name: ${f.name}\nEmail: ${f.email}\nCompany: ${f.company}\nWebsite: ${f.website || '—'}\nBusiness: ${f.sector}\n\nGoal in the UAE:\n${f.message || '—'}\n\nPreferred slots (30 min):\n${slots}`;
-    window.location.href = `mailto:kacibouabida@qinwan-marketing.com?subject=${encodeURIComponent('Consultation request — ' + f.company)}&body=${encodeURIComponent(body)}`;
-    this.setState({ sent: true });
-  };
   renderVals() {
-    const f = this.state.f;
-    return {
-      f, onField: this.onField, onSubmit: this.onSubmit,
-      today: new Date().toISOString().slice(0, 10),
-      slots: [1, 2, 3].map(i => ({ n: i, dateKey: 'd' + i, timeKey: 't' + i, date: f['d' + i], time: f['t' + i] })),
-      sent: this.state.sent, notSent: !this.state.sent,
-      hasError: !!this.state.error, error: this.state.error,
-      reset: () => this.setState({ sent: false }),
-      showPricing: this.props.showPricing ?? true,
-    };
+    return { showPricing: this.props.showPricing ?? true };
   }
 }
 </script>

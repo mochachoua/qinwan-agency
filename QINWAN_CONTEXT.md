@@ -433,7 +433,8 @@ FAQ examples:
 - **Single primary action everywhere:** "Book a consultation".
 - Secondary (low commitment): "See how we work", "Explore services".
 - Placement: header button (sticky), hero, after services, after founder, closing band, every service page end.
-- Booking flow **[FACT]**: no third-party booking tool. Short form (name, company, website, sector, current markets, goal) **+ preferred time-slot selection** built into the contact page → request sent to kacibouabida@qinwan-marketing.com → Kaci confirms by email.
+- **[FACT — MVP]** No contact form for now: CTAs open an email to kacibouabida@qinwan-marketing.com; Kaci replies to set a time.
+- Former plan (on hold): no third-party booking tool. Short form (name, company, website, sector, current markets, goal) **+ preferred time-slot selection** built into the contact page → request sent to kacibouabida@qinwan-marketing.com → Kaci confirms by email.
   - **[RECOMMENDATION]**: offer 3 slot choices (date + time window, Dubai time GST) so Kaci can confirm one quickly.
 - Alternative contact: email only. No WhatsApp, no LinkedIn link on the site.
 - Microcopy: "A free 30-minute consultation to understand your business and your UAE ambitions." (FACT: free, 30 min)
@@ -486,7 +487,9 @@ FAQ examples:
 
 Requirements for all: one-colour version, works at 16 px, horizontal + stacked lockups, mono/negative versions, no buildings, no skyline, no falcon/palm/dhow clichés, no gradients.
 
-Recommended path: **D** as the core — قنوان mark + QINWAN wordmark lockup — with a subtle **E** (date) detail, and a compact mark derived from قنوان (or a Q from **B**) for favicon and LinkedIn avatar. **A** serves as the Latin-only fallback.
+**[FACT — validated]** Current logo: lockup **قنوان | QINWAN** — Arabic word (Noto Kufi Arabic, semibold) + terracotta vertical rule + QINWAN in widely tracked sans (DM Sans semibold, 0.32em tracking). Used in header and footer of the site.
+
+Original recommendation: **D** as the core — قنوان mark + QINWAN wordmark lockup — with a subtle **E** (date) detail, and a compact mark derived from قنوان (or a Q from **B**) for favicon and LinkedIn avatar. **A** serves as the Latin-only fallback.
 
 ---
 
